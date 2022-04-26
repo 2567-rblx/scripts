@@ -1,14 +1,9 @@
--- 26.4.2022
+-- Song Breaker Awards : 9230434873 : 26.4.2022
+-- IDoN0t @ v3rmillion.net
+
+-- Don't worry the source code also hurts me
 
 local network = require(game:GetService("ReplicatedStorage").SharedModules.Global).Network
-
-
-
-local function teleport(inst, cframe)
-	local tween = game:GetService("TweenService"):Create(inst, TweenInfo.new(0), {CFrame=cframe})
-	tween:Play()
-end
-
 local function collectCoins()
 	local startFunc = require(game:GetService("ReplicatedStorage").Modules.World.Interactables.CoinHandler).Start
 	local collectFunc = debug.getupvalue(startFunc, 3).Collect
@@ -47,7 +42,7 @@ until workspace.Interactables.SelfieCam:FindFirstChild("Player")
 -- collect all people
 for i, proxPrompt in pairs(workspace["Honoree_Hunt"].Hidden:GetDescendants()) do
 	if proxPrompt.Name == "ProximityPrompt" then
-		teleport(game.Players.LocalPlayer.Character.HumanoidRootPart, proxPrompt.Parent.Parent.CFrame)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = proxPrompt.Parent.Parent.CFrame
 		task.wait(0.5)
 		fireproximityprompt(proxPrompt)
 	end
