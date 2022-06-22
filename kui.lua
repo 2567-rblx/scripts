@@ -1,1 +1,1 @@
-game.Players.LocalPlayer:Kick("\nFuck off you fucker")
+game.Players.LocalPlayer:Kick("\nFuck off you nigger")
